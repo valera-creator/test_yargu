@@ -31,6 +31,14 @@ public class LinearEquationSolverTest {
         assertThat(LinearEquationSolver.solve(0, 2)).isNull();
     }
 
+    @Test
+        // проверка, если есть отрицательное число
+        // дано: a = 2, b = -4
+        // ожидается: -2
+    void negativeNum() {
+        assertThat(LinearEquationSolver.solve(2, -4)).isEqualTo(-2.0);
+    }
+
     // проверка, если a = 0 и b = 0
     // дано: a = 0, b = 0
     // ожидается: исключение, что x - любой

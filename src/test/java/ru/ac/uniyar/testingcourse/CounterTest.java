@@ -37,11 +37,21 @@ public class CounterTest {
 
     // обнуление с ненулевого значения до нуля
     @Test
-    void resetValueNotZero(){
+    void resetValueNotZero() {
         for (int i = 0; i < 100; i++)
             counter.increase();
         counter.reset();
         assertThat(counter.getValue()).isEqualTo(0);
+    }
+
+    // тест, что поле счетчика не статическое
+    // при вызове методе увеличение счетчика у одного counter`а у второго значение не изменится
+    @Test
+    void twoCounter() {
+        Counter counterBear = new Counter();
+        counter.increase();
+        assertThat(counter.getValue()).isEqualTo(1); // первый изменился на 1
+        assertThat(counterBear.getValue()).isEqualTo(0); // второй counter не изменился
     }
 
 }

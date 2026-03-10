@@ -2,8 +2,8 @@ package ru.ac.uniyar.testingcourse;
 
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
+import static org.assertj.core.api.AssertionsForClassTypes.*;
+
 
 public class LinearEquationSolverTest {
 
@@ -45,6 +45,12 @@ public class LinearEquationSolverTest {
     @Test
     void abZero() {
         assertThatThrownBy(() -> LinearEquationSolver.solve(0, 0)).isInstanceOf(LinearEquationSolver.AnyNumberIsRootException.class);
+    }
+
+    // тест, где иррациональное число
+    @Test
+    void irrationalNum() {
+        assertThat(LinearEquationSolver.solve(3.0, 2.0)).isCloseTo(0.6666, within(0.0001));
     }
 
 }

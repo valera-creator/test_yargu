@@ -1,0 +1,82 @@
+СПИСОК
+
+List<String> list = new ArrayList<>();
+List<String> list2 = new ArrayList<>(List.of("A", "B", "C")); // с данными
+
+add(element) — добавить элемент
+list.add("Яблоко");           // добавить в конец
+list.add("Груша");            // [Яблоко, Груша]
+list.add(0, "Апельсин");      // добавить по индексу → [Апельсин, Яблоко, Груша]
+
+get(index) — получить по индексу
+String fruit = list.get(0);   // "Апельсин"
+String fruit2 = list.get(1);  // "Яблоко"
+
+remove(int index) / remove(Object o) — удалить
+list.remove(0);               // удалить по индексу → [Яблоко, Груша]
+list.remove("Груша");         // удалить по значению → [Яблоко]
+
+size() — размер
+int size = list.size();       // 1
+
+contains(Object o) — проверить наличие
+boolean has = list.contains("Яблоко");  // true
+boolean has2 = list.contains("Банан");  // false
+
+isEmpty() — пустой ли
+boolean empty = list.isEmpty();  // false
+list.clear();
+boolean empty2 = list.isEmpty(); // true
+
+HASHSET
+Set<String> set = new HashSet<>();
+Set<String> set = new HashSet<>(Set.of("A", "B", "C"));
+
+add(E element) — добавить
+set.add("Красный");        // true (добавлен)
+set.add("Синий");          // true (добавлен)
+set.add("Красный");        // false (уже есть, не добавится!)
+
+contains(Object o) — проверить наличие
+boolean has = set.contains("Красный");  // true
+boolean has2 = set.contains("Зелёный"); // false
+
+remove(Object o) — удалить
+set.remove("Синий");       // true (удалён)
+set.remove("Жёлтый");      // false (не было)
+
+size() — размер
+int size = set.size();     // 1 (только "Красный")
+
+isEmpty() — пустой ли
+boolean empty = set.isEmpty();  // false
+set.clear();
+boolean empty2 = set.isEmpty(); // true
+
+HASHMAP
+Map<String, Integer> map = new HashMap<>();
+Map<String, Integer> map = new HashMap<>(Map.of("A", 1, "B", 2));
+
+put(key, value) — добавить пару
+map.put("Иван", 25);       // добавить ключ-значение
+map.put("Петр", 30);       // добавить ещё
+map.put("Иван", 26);       // обновить значение (ключ тот же) → Иван=26
+
+get(key) — получить по ключу
+Integer age = map.get("Иван");    // 26
+Integer age2 = map.get("Мария");  // null (нет такого ключа)
+
+remove(key) — удалить по ключу
+map.remove("Петр");        // удалит пару "Петр" → 30
+
+containsKey(key) — проверить ключ
+boolean hasKey = map.containsKey("Иван");   // true
+boolean hasKey2 = map.containsKey("Мария"); // false
+
+size() — размер
+int size = map.size();     // 1 (только "Иван")
+
+isEmpty() — пустой ли
+boolean empty = map.isEmpty();  // false
+map.clear();
+boolean empty2 = map.isEmpty(); // true

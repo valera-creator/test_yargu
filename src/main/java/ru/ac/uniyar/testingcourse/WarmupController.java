@@ -16,7 +16,7 @@ package ru.ac.uniyar.testingcourse;
  */
 public class WarmupController {
     //! Длительность прогрева из холодного состояния
-    private final double warmupDurationFromCold = 123.0;
+    private final double warmupDurationFromCold = 120.0;
     //! Длительность промежутка времени, после которого прогрев осуществляется заново
     private final double thresholdDuration = 60.0;
     //! Время начала прогрева
